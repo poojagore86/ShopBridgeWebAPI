@@ -1,0 +1,65 @@
+﻿@model ShopBridgeMVC.Models.ProductMVCModel
+@{
+    ViewBag.Title = "AddOrEdit";
+}
+
+
+    <div class="row p-3 border">
+        <div class="col-8 pt-4">
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(model => model.ProductID)
+                <div class="col-12 border-bottom">
+                    <h2 class="text-primary">Create Product</h2>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.LabelFor(model => model.Name)
+                    </div>
+                    <div class="col-8">
+                        @Html.EditorFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.LabelFor(model => model.Description)
+                    </div>
+                    <div class="col-8">
+                        @Html.EditorFor(model => model.Description)
+                        @Html.ValidationMessageFor(model => model.Description)
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.LabelFor(model => model.Category)
+                    </div>
+                    <div class="col-8">
+                        @Html.EditorFor(model => model.Category)
+                        @Html.ValidationMessageFor(model => model.Category)
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.LabelFor(model => model.Price)
+                    </div>
+                    <div class="col-8">
+                        @Html.EditorFor(model => model.Price)
+                        @Html.ValidationMessageFor(model => model.Price)
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <input type="submit" value="Submit" class="btn button" />
+                        <input type="reset" value="Reset" class="btn button" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+ @section scripts{
+      @Scripts.Render("~/bundles/jqueryval");
+  }
+
